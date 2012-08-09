@@ -92,7 +92,7 @@ exports.page = function(req,res) {
 exports.post = function(req, res){
   storage.getPostBySlug(req.params.slug, function(error, file){
     if (error) {
-      throw error;
+      res.render('500');
     } else {
       var post = JSON.parse(file);
       post.content = markdown.makeHtml(post.content);
