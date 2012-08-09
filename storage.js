@@ -23,10 +23,10 @@ exports.getTimeline = function (callBack) {
 };
 
 exports.addPost = function (post) {
-  fs.writeFileSync('./storage/post/' + post.slug + '.json', data);
+  fs.writeFileSync('./storage/post/' + post.slug + '.json', JSON.stringify(post));
   this.getTimeline(function (err, file) {
     var timeline = JSON.parse(file);
-    timeline.unshift({slug:post.slug, title:post.title});
+    timeline.unshift({slug: post.slug, title: post.title});
     fs.writeFileSync('./storage/timeline.json', JSON.stringify(timeline));
   });
 };

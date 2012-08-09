@@ -39,8 +39,8 @@ exports.postWrite = function(req,res){
     }
 
     try{
-      storage.writePost(post);
-      res.redirect('/admin/post/'+ post.slug);
+      storage.addPost(post);
+      res.redirect('/admin/post/edit/'+ post.slug);
     }
     catch(error) {
       console.log(error);
