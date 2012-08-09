@@ -1,0 +1,48 @@
+extends layout
+
+append head
+  title #{title}
+
+block content
+  section#main.container
+    div.content
+      section.posts
+        - posts.forEach(function(item){
+          article.post.block
+              h2.page-title
+                a(href="/post/" + item.slug) #{item.title}
+              div.meta
+                time #{item.created}
+              div.entry !{item.content}
+        - })
+       div.navigation.block
+          table(width="100%")
+            tbody
+              tr
+                td(width="120",align="left")
+                  - if (crtP > 1)
+                    div.alignleft
+                      a(href="/page/"+ (crtP -1))« Previous Entries
+                td(width="auto", align="center")
+                  strong.fade
+                    !{crtP} / !{maxP}
+                td(width="120",align="right)
+                  - if (nextP > crtP)
+                    div.alignright
+                      a(href="/page/"+nextP) Next Entries »
+    div.sidebar
+      div.widget.block
+        strong.wt About Me
+        div.wc
+          p 我是 willerce，是一只前端攻城狮，目前在厦门同步网络，欢迎大家与我交流。
+          div.sep10
+          p
+            span
+              i.icon-feed
+              a(href="http://feeds.feedburner.com/willerce",target="_blank")
+                订阅博客
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            span
+              i.icon-weibo
+              a(href="http://weibo.com/willerce",target="_blank")
+                关注我

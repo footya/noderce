@@ -1,0 +1,22 @@
+extends layout
+
+append head
+  title #{page_title}
+
+block content
+  div#main.container.page
+    div.content
+      article.post.block
+        h1.page-title Archives
+        div.entry
+          ul
+            - archives.forEach(function(item){
+              li
+                a(href="/post/" + item.slug) #{item.title}
+            - })
+    div.sidebar
+      div.widget.block
+        strong.wt About This Page
+        div.wc
+          p
+            xx

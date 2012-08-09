@@ -1,0 +1,23 @@
+{
+  "name": "noderce",
+  "preferGlobal": "true",
+  "version": null,
+  "private": true,
+  "author": "Willerce.Jen <willerce@gmail.com>",
+  "description": "a simple nodejs blog program",
+  "scripts": {
+    "start": "node app"
+  },
+  "engines": {
+    "node": "0.8.2",
+    "npm": "1.1.41"
+  },
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "markdown-js": "latest",
+    "data2xml": "latest"
+  },
+  "subdomain": "willerce.jit.su",
+  "PATH": "bin:node_modules/.bin:/usr/local/bin:/usr/bin:/bin"
+}
